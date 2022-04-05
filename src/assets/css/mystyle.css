@@ -1,0 +1,245 @@
+body,html {
+  margin: 0px;
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.gcweb {
+  background-color: rgba(36, 33, 33, 0.3);
+  /* background-image: linear-gradient( 135deg, #43CBFF 10%, #9708CC 100%,0.6); */
+  /* background-image: linear-gradient( 135deg, rgba(82,229,231,0.2) 10%, rgba(19,12,180,0.3) 100%); */
+  
+  background-image: linear-gradient( 135deg,   rgba(15,32,39,0.1) 10%, rgba(19,12,180,0.3) 100%);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .12), 0 0 6px rgba(168, 53, 53, 0.04);
+  border-radius: 0.25rem;
+}
+
+.gcweb .header {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+/* 头部导航 */
+#top-menu {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  z-index:1001;
+}
+/* 左侧边栏 */
+#left-menu {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  z-index: 1001;
+  transition: all 0.4s ease;
+}
+
+
+#left-menu.xs {
+  margin-left: -200px;
+  transition: all 0.4s ease;
+}
+
+
+#left-menu #left-button {
+  font-size: 35px;
+  color: rgba(15, 142, 239, 0.531);
+  position: absolute;
+  left: 220px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+#left-menu #left-button:hover {
+  cursor:pointer;
+  color: bisque;
+  transition: all 0.45s ease;
+}
+
+/* 内容 */
+#content {
+ 
+  position: relative;
+  top: 60px;
+  margin-left: 220px;
+  margin-right: 20px;
+  padding: 10px 5px;
+  background-color: rgba(0, 0, 0, .04);
+}
+
+#content.xs {
+  margin-left: 20px;
+  transition: all 0.4s ease;
+}
+
+#footer {
+  color:aliceblue;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+
+/* other */
+.el-submenu__title:hover {
+  background-color: #00000060!important;
+}
+.el-menu-item:hover {
+  background-color: #00000060!important;
+}
+.el-menu {
+  border-right: none;
+}
+.el-menu i {
+ color: gold;
+}
+/* 文章title 和 简介颜色 */
+.el-form-item__label {
+  color: aqua !important;
+}
+/* input */
+.el-input input {
+  background-color: #00000060;
+  color: azure;
+}
+
+/* 富文本 */
+.note-editor {
+  background-color:#b6b3b3f5;
+  width: 70%;
+}
+.note-editable {
+  font-family:'Calibri'; 
+  font-size:16px !important;
+ }
+.note-btn {
+  color: rgb(255, 255, 255);
+}
+.note-btn:hover {
+  color: rgb(91, 158, 119);
+}
+/* 输入内容区域 */
+.note-editable {
+  height: 400px;
+  color: aliceblue;
+  background-color: #00000080;
+}
+/* 下拉选项背景色 */
+.note-dropdown-menu {
+  background-color: #00000060;
+}
+.note-dropdown-menu a {
+  color: blanchedalmond;
+}
+
+/*文本输入框*/
+.el-textarea__inner {
+  background-color: #00000060;
+  color: #fff;
+}
+
+/*文章列表面包屑导航栏 字体颜色*/
+.el-breadcrumb__inner a, .el-breadcrumb__inner.is-link {
+  color: #fff;
+}
+.el-breadcrumb__inner {
+  color: #fff;
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__inner:hover {
+  color: rgba(225,208,71,0.9);
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__inner  {
+  color:#fff;
+}
+/* 分页器背景修改 */
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: gold;
+  color: #FFF;
+}
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 30px;
+  border-radius: 2px;
+}
+
+
+/* 用户管理body */
+ .body {
+   margin-top: 20px;
+ }
+.body h5 {
+  font-weight: 600;
+  color: #fff;
+}
+
+.body.gcweb .header {
+ 
+}
+
+/* 清除浮动 */
+.clear {
+  clear: both;
+}
+
+/* 文章内容样式 */
+.article-content {
+  height: 800px;
+  overflow-y: auto;
+}
+.article-content img {
+  margin: 5px;
+}
+
+
+/* 视频背景 */
+.video-contaient {
+  position: fixed;
+  z-index: -1;
+}
+ 
+
+img{
+  opacity:0.7
+}
+
+
+.el-input__inner{
+  background-color:rgba(0,0,0,0) ;
+
+  border: none;
+}
+.el-input--suffix .el-input__inner{
+
+}
+
+.el-select:hover .el-input__inner {
+    border-color: rgba(0,0,0,0)!important;
+}
+.el-input input{
+  background-color: rgba(0,0,0,0)!important;
+}
+
+.reading .el-input input{
+  color: rgb(34, 34, 34,0)!important;
+}
+.choosedspan{
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+.nochoosedspan{
+  color: rgba(13, 13, 250, 0.9);
+  text-decoration: underline;
+  font-weight: 700;
+}

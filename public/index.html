@@ -1,17 +1,126 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <script type="text/javascript"  src="../src/assets/js/L2Dwidget.0.min.js"></script>
+    <script type="text/javascript"  src="../src/assets/js/L2Dwidget.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+
+  <style>
+    *{
+    font-family: 'Noto Serif SC', serif;
+  }
+    /* 看板娘样式设置 */
+    #live2dcanvas {
+      border: 0 !important;
+    }
+    /* body{
+      cursor: url('https://blog-static.cnblogs.com/files/lucas--liu/cat6.ico'), auto;
+    }*/
+    body{
+    /* 鼠标图标 */
+    cursor: url("./BreezeContrast/Arrow.cur"),default;
+    /*url("你的鼠标指针图标路径")*/
+}
+select{
+	cursor: url("./BreezeContrast/Hand.cur"), pointer;
+}
+button,a:hover{
+	cursor: url("./BreezeContrast/Hand2.cur"), pointer;
+}
+input{
+	cursor:url("./BreezeContrast/Help.cur"), text;	
+}
+textarea,input:focus{
+	cursor:url("./BreezeContrast/IBeam.cur"), text;	
+}
+code{
+	cursor: url("./BreezeContrast/Handwriting.cur"), default;	
+}
+pre>code{
+	cursor: url("./BreezeContrast/Copy.cur"), default;	
+}
+
+/*a标签跳转鼠标样式*/
+a:hover{
+    cursor:url("./BreezeContrast/Hand.cur"),pointer!important
+}
+li:hover{
+    cursor:url("../medias/cur/Hand.cur"),pointer!important
+}
+
+button:hover{
+  cursor:url("../medias/cur/Hand.cur"),pointer!important
+}
+i:hover{
+  cursor:url("../medias/cur/Hand.cur"),pointer!important
+}
+  </style>
+  
+
+</head>
+
+<body >
+  <script>
+    L2Dwidget.init({"display": {
+    "superSample": 2,
+    "width": 200,
+    "height": 400,
+            "position": "right",
+                "hOffset": 0,
+    "vOffset": 0
+        }
+    });
+  </script>
+  <script>
+    // 鼠标点击特效
+    var a_idx = 0;
+    $("body").click(function(e) {
+            var a = new Array("🤍感谢观看🤍",
+            "💗","💖喜欢就看看其他主页白❤","💞💓🤍💘💝💟","💞快去💓","💘💝💟","💞不是点这里哦💞","💘","❤啦啦啦啦啦❤","💝","💝💝");
+            var $i = $("<span></span>").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+            var x = e.pageX,
+            y = e.pageY;
+            $i.css({
+                "z-index": 999999999999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+            });
+            $("body").append($i);
+            $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            1500,
+            function() {
+                $i.remove();
+            });
+        });
+    </script>
+
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  
+    <div id="app" >
+    <script></script> 
+    </div>
+
+  <!-- built files will be auto injected -->
+
+</body>
+
 </html>
