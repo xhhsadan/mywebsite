@@ -28,11 +28,14 @@
                           :src="item.cover"
                           :fit="'cover'"></el-image>
               </el-col>
-              <el-col class="text-item"
+              <el-col class="text-item-title"
                       :xs="24"
                       :lg="5"
                       style="padding-left:20px">
-                <span style="overflow:hidden;text-overflow: ellipsis;font-size:16px;white-space: nowrap;font-weight:700">
+                <span style="overflow:hidden;
+                
+                text-align:left!important;
+                text-overflow: ellipsis;font-size:14px;white-space: nowrap;font-weight:400">
                   {{item.title}}
                 </span>
               </el-col>
@@ -181,8 +184,32 @@ export default {
   justify-content: center;
   align-content: center;
   align-items: center;
-  color: rgb(17, 2, 2);
+  color: rgb(85, 82, 82);
   font-size: 16px;
+}
+.card .text-item-title {
+  height: 100px;
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  align-items: center;
+  color: rgb(104, 100, 100);
+  font-size: 16px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .card .text-item-title {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: rgb(68, 66, 66);
+  font-size: 16px;
+}
+
+  
 }
 
 

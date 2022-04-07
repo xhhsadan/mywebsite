@@ -2,26 +2,29 @@
   <div id="register-page">
     <div class="gcweb  registerbox">
       <div class="header">
-        <span style="color:white">新用户注册</span>
+        <span style="color:black">Register</span>
         <el-divider></el-divider>
       </div>
       <el-form :label-position="labelPosition"
                label-width="80px"
                :model="formData">
-        <el-form-item label="用户名">
+        <el-form-item >
+          <span>username</span>
           <el-input v-model="formData.username"></el-input>
         </el-form-item>
-        <el-form-item label="密码">
+        <el-form-item>
+          <span>password</span>
           <el-input v-model="formData.password"></el-input>
         </el-form-item>
-        <el-form-item label="再次输入">
+        <el-form-item label="">
+          <span>please input password agin</span>
           <el-input v-model="formData.password2"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="success"
-                     @click="gcRegister()">注册</el-button>
-          <el-button type="warning"
-                     @click="toLogin()">账号登陆</el-button>
+          <el-button type="mini" icon="el-icon-edit"
+                     @click="gcRegister()">register</el-button>
+          <el-button type="mini"
+                     @click="toLogin()">to login</el-button>
         </el-form-item>
       </el-form>
     </div>

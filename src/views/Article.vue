@@ -17,16 +17,16 @@
           </div>
         </div> -->
 
-        <div class="body gcweb  ">
-          <div class="gcweb">
-           <font>Describe:</font> 
+        <div class="body   ">
+          <div class="desc">
+           <font style="margin-left:-25px">Describe:</font> 
            {{article_data.describe}}
           </div>
         </div>
         <!-- 文章内容 -->
         <div class="body gcweb  ">
           <div class="article-content"
-          style="max-height:450px;margin-left:20px"
+          style="max-height:550px;margin-left:20px"
                v-html="article_data.content">
           </div>
           <div class="clear"></div>
@@ -397,5 +397,17 @@ html {
 *::-webkit-scrollbar-thumb {
     background: hsl(214, 13%, 75%);
     border-radius: 4px;
+}
+
+.desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(198, 198, 198);
+    text-indent: 2em;
+    font-style: normal;
+    border-bottom:rgb(222, 219, 219) 1px solid;
+    width: 95%;margin: 0 auto;
+    padding-left: 0px;
+    padding-bottom: 10px;
 }
 </style>

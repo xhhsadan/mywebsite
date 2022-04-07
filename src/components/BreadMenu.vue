@@ -4,7 +4,7 @@
     <el-breadcrumb separator-class="el-icon-arrow-right"
                    style="padding:20px 0px 20px 20px;font-size:16px;color:black">
       <el-breadcrumb-item :to="{ path: '/' }">TOP</el-breadcrumb-item>
-      <el-breadcrumb-item v-if="lanmu">{{lanmu}}</el-breadcrumb-item>
+      <el-breadcrumb-item @click.native="toguidang" style="color:gray"  v-if="lanmu">{{lanmu}}</el-breadcrumb-item>
       <el-breadcrumb-item>{{page_name}}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
@@ -18,6 +18,13 @@ export default {
       // 父组件向子组件传值props
     }
   },
+  methods:{
+    toguidang(){
+      this.$router.push({path:'/article-Pigeonhole',query:{
+        slanmu:this.lanmu
+      }})
+    }
+  }
 }
 </script>
 

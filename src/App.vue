@@ -2,17 +2,24 @@
   <div id="app">
     <!-- 视频背景 -->
     <div class="video-contaient">
-      <video autoplay
+      <!-- <video autoplay
       width="100%"
       style="min-width:1800px;"
              muted
              loop
-             src="./assets/images/video.mp4"></video>
+             src="./assets/images/video.mp4"></video> -->
     </div>
 
     <!--头部导航-->
     <div id="top-menu"
          class="gcweb">
+
+         <div v-if="this.$store.state.userinfo.token" style="float:right;display:flex;margin-right:40px;margin-top:10px; display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;">
+           <span style="font-size:12px;color:gray;margin-left:10px">{{this.$store.state.userinfo.nickName}}</span>
+         </div>
     </div>
     <!-- 侧边栏左侧导航 -->
     <div id="left-menu"
@@ -29,17 +36,16 @@
         <el-menu default-active="1"
                  class="el-menu-vertical-demo"
                  background-color="#00000000"
-                 text-color="#D8D8D8"
-                 active-text-color="#ffd04b60"
+                 text-color="gray"
+                 active-text-color="#33a3dc"
+
+                 style="font-size:14px"
                  router>
           <el-menu-item index="/">
             <i class="el-icon-s-promotion"></i>
             <span slot="title">TOP</span>
           </el-menu-item>
-          <el-menu-item index="/soti">
-            <i class="el-icon-s-promotion"></i>
-            <span slot="title">SoTi</span>
-          </el-menu-item>
+          
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-notebook-2"></i>
@@ -64,15 +70,20 @@
             <span slot="title">
               Pigeonhole</span>
           </el-menu-item>
-          <el-menu-item index="/3dshow">
+          <el-menu-item index="/soti">
+            <i class="el-icon-search"></i>
+            <span slot="title">SoTi</span>
+          </el-menu-item>
+          <!-- <el-menu-item index="/3dshow">
             <i class="el-icon-s-goods"></i>
             <span slot="title">3Dshow</span>
-          </el-menu-item>
+          </el-menu-item> -->
           <!-- 栏目模块之后开发--xuhao -->
           <!-- <el-menu-item index="4">
             <i class="el-icon-s-operation"></i>
             <span slot="title">栏目管理</span>
           </el-menu-item> -->
+          
           <el-menu-item v-if="authUserLogin"
                         @click="gcLogout()">
             <i class="el-icon-back"></i>
@@ -129,6 +140,7 @@ export default {
       mobile_content: '',
       shoes:false,
       audios:'',
+      username:''
     }
   },
   computed: {
@@ -159,6 +171,7 @@ export default {
     console.log('hello')
   },
   methods: {
+  
     changeDevice () {
       if (this.screenWidth <= 500) {
         this.mobile_left = ' '

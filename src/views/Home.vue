@@ -50,13 +50,15 @@
           </div>
           </div>
 
-          <div >
+          <div style="height:20px">
 
           </div>
           <div style="display:flex;justify-content: center;flex-wrap: wrap;justify-content: center;
-            align-items: center;">
-          <span style="color:aliceblue">{{fx}}</span>
-            <el-select v-model="direction" class="reading" style="width:100px" placeholder="请选择">
+            align-items: center;" >
+          <span style="color:gray">{{fx}}</span>
+            <el-select v-model="direction" 
+          
+            class="reading" style="width:100px;background-color:rgba(0,0,0,0)!important;" placeholder="请选择">
               <el-option
                 v-for="item in chooses"
                 :key="item.value"
@@ -70,7 +72,7 @@
            
 
             <el-drawer
-              size=60%
+              size=50%
               :title="article.author"
               :visible.sync=drawer
               :direction="direction"
@@ -99,7 +101,8 @@
               阅读
             </el-button>
           </div>
-        
+        <div style="height:20px">
+</div>
 
 
         </div>
@@ -135,6 +138,8 @@ export default {
 mounted(){
    this.x();
    this.y();
+   console.log(this.$store.state.userinfo.token)
+   console.log(this.$store.state.userinfo)
 },
 watch:{
   direction(val,newval){
@@ -204,7 +209,7 @@ methods:{
     width: 121px;
     height: 121px;
     padding: 10px;
-    background: rgba(0,0,0,.4);
+    background: rgba(0, 0, 0, 0.4);
     top: 40px;
     left: -40px;
     -webkit-transform: translate3d(0,50px,0);
@@ -275,8 +280,8 @@ img {
     width: 90%;
     margin: auto;
     font-size: 16px;
-    color: #eaeadf;
-    background: rgba(0,0,0,.5);
+    color: #ffffff;
+    background: rgba(11, 129, 233, 0.9);
     padding: 15px;
     margin-top:23px;
     letter-spacing: 0;
@@ -299,7 +304,7 @@ img {
     margin-left: -15px;
     border-width: 15px;
     border-style: solid;
-    border-color: transparent transparent rgba(0,0,0,.5) transparent;
+    border-color: transparent transparent rgba(11, 129, 233, 0.9) transparent;
 }
 
 
@@ -363,4 +368,6 @@ html {
 }
 
   
+
+
 </style>

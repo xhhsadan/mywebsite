@@ -2,24 +2,27 @@
   <div id="login-page">
     <div class="gcweb loginbox">
       <div class="header">
-        <span style="color:white"> 用户登录 </span>
+        <span style="color:black"> Login</span>
         <el-divider></el-divider>
       </div>
       <el-form :label-position="labelPosition"
-               label-width="80px"
+               
                :model="formData">
-        <el-form-item label="用户名">
+        <el-form-item >
+          <span>username</span>
           <el-input v-model="formData.username"></el-input>
         </el-form-item>
-        <el-form-item label="密码">
+        <el-form-item >
+           <span>password</span>
           <el-input v-model="formData.password"
                     show-password></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="success"
-                     @click="gcLogin()">登陆</el-button>
-          <el-button type="warning"
-                     @click="toRegister()">前往注册</el-button>;
+          <el-button type="mini" icon="el-icon-coffee-cup"
+          
+                     @click="gcLogin()">login</el-button>
+          <el-button type="mini primary"
+                     @click="toRegister()">to register</el-button>
         </el-form-item>
       </el-form>
     </div>
